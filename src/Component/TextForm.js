@@ -40,6 +40,14 @@ export default function TextForm(props) {
       let newText='';
       setText(newText);
     }
+
+    const copyText=()=>{
+      var text =document.getElementById("myBox")
+      text.select();
+      navigator.clipboard.writeText(text.value)
+
+
+    }
     
 
     const handleOnChange=(event)=>{
@@ -58,7 +66,7 @@ export default function TextForm(props) {
         <div className="mb-3 my-5">
         <h1>{props.heading}</h1>
         
-        <textarea className="form-control" value={text} placeholder='Enter text here...' onChange={handleOnChange} id="exampleFormControlTextarea1" rows="10"></textarea>
+        <textarea className="form-control" value={text} placeholder='Enter text here...' onChange={handleOnChange} id="myBox" rows="10"></textarea>
         </div>
 
         <div className="container2 border border-dark mb-3 pt-2  ps-2">
@@ -70,6 +78,7 @@ export default function TextForm(props) {
         <button className='btn btn-primary mx-2' onClick={titleCase} >Title Case</button>
         <button className='btn btn-primary mx-2' onClick={removeExtraSpace} >Remove extra spaces</button>
         <button className='btn btn-primary mx-2' onClick={clearText} >Clear Text</button>
+        <button className='btn btn-primary mx-2' onClick={copyText} >Copy Text</button>
 
     </div>
     
