@@ -1,7 +1,7 @@
 import { isLabelWithInternallyDisabledControl } from '@testing-library/user-event/dist/utils'
 import React, { useState } from 'react'
 
-export default function About() {
+export default function About(props) {
     const[myStyle,setMyStyle]=useState({
         color: 'black',
         backgroundColor: 'white'
@@ -32,8 +32,8 @@ export default function About() {
 
     return (
       
-    <div className='container ' style={myStyle}>
-                    <h2 className='my-3'>About Us</h2>
+    <div className={`container bg-${props.mode}`} >
+                    <h2 className={`my-3 text-${props.mode==='light'?'dark':'white'}`}>About Us</h2>
                         <div className="accordion" id="accordionExample" >
                     <div className="accordion-item">
                         <h2 className="accordion-header" id="headingOne">
