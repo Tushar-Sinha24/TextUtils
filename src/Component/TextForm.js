@@ -61,17 +61,17 @@ export default function TextForm(props) {
    
   return (
     <>
-    <div className='container'>
+    <div className={`container text-${props.mode==='light'? 'dark':'light'} `}>
         
-        <div className="mb-3 my-5">
+      <div className='mb-3 my-5 ' >
         <h1>{props.heading}</h1>
         
         <textarea className="form-control" value={text} placeholder='Enter text here...' onChange={handleOnChange} id="myBox" rows="10"></textarea>
-        </div>
+      </div>
 
-        <div className="container2 border border-dark mb-3 pt-2  ps-2">
+      <div className="container2 border border-dark mb-3 pt-2  ps-2">
         <p className=''>{text.trim().split(/\s+/g).length} Words and {text.length} Charachter</p>
-    </div>
+      </div>
 
         <button className='btn btn-primary mx-2' onClick={handleUpClick} >Convert to UpperCase</button>
         <button className='btn btn-primary mx-2' onClick={handleLoClick} >Convert to LowerCase</button>
