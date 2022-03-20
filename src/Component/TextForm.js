@@ -66,7 +66,7 @@ export default function TextForm(props) {
       <div className='mb-3 my-5 ' >
         <h1>{props.heading}</h1>
         
-        <textarea className="form-control" value={text} placeholder='Enter text here...' onChange={handleOnChange} id="myBox" rows="10"></textarea>
+        <textarea className={`form-control bg-${props.mode} text-${props.mode==='white'}`} value={text} placeholder='Enter text here...' onChange={handleOnChange} id="myBox" rows="10"></textarea>
       </div>
 
       <div className="container2 border border-dark mb-3 pt-2  ps-2">
