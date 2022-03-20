@@ -1,8 +1,8 @@
 
 import './App.css';
-import About from './Component/about'
+// import About from './Component/about'
 import Navbar from './Component/Navbar';
-// import TextForm from './Component/TextForm';
+import TextForm from './Component/TextForm';
 import React, {useState} from 'react'
 
 
@@ -29,8 +29,8 @@ function App() {
    <Navbar title="TextUtils" mode={mode} toogleMode={toogleMode}/>
 
       <div className="container " >
-      {/* <TextForm heading="Enter the text to analyze" mode={mode}/> */}
-      <About mode={mode} toogleMode={toogleMode}/>
+      <TextForm heading="Enter the text to analyze" mode={mode}/>
+      {/* <About mode={mode} toogleMode={toogleMode}/> */}
       </div>
    
    
