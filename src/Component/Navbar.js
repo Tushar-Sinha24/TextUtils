@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+
 import PropTypes from 'prop-types'
 
 
@@ -25,9 +25,9 @@ export default function Navbar(props) {
 
       </ul>
       {/* switch */}
-      <div class={`form-check form-switch text-${props.mode}`}>
-        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault"/>
-        <label class="form-check-label" for="flexSwitchCheckDefault">Enable Dark mode</label>
+      <div className="form-check form-switch text-dark">
+        <input className="form-check-input" onClick={props.toogleMode} type="checkbox" role="switch" id="flexSwitchCheckDefault"/>
+        <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Enable Dark mode</label>
       </div>
 
     </div>
