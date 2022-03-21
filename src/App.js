@@ -18,6 +18,9 @@ function App() {
         msg:message,
         type:type
       })
+      setTimeout(()=>{
+        setAlert(null)
+      },1500)
     }
 
     const toogleMode=()=>{
@@ -41,7 +44,7 @@ function App() {
 
       <div className="container-fluid " >
       <Alert alert={alert}/>
-      <TextForm heading="Enter the text to analyze" mode={mode}/>
+      <TextForm heading="Enter the text to analyze" mode={mode}  showAlert={showAlert}/>
       {/* <About mode={mode} toogleMode={toogleMode}/> */}
       </div>
    

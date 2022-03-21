@@ -8,20 +8,22 @@ export default function TextForm(props) {
         
        let newText=text.toUpperCase();
         setText(newText);
-        console.log("click"+newText)
+        // console.log("click"+newText)
+        props.showAlert("Converted text to upper case","Success");
     }
 
     const handleLoClick=()=>{
         // console.log("click"+text)
        let newText=text.toLowerCase();
         setText(newText);
+        props.showAlert("Converted text to lower case","Success");
     }
 
     const removeExtraSpace=()=>{
         // console.log("click"+text)
         let newText=text.replace(/\s+/g,' ');
-
         setText(newText);
+        props.showAlert("Extra Spaces Removed","Success");
     }
 
     const titleCase=()=>{
@@ -34,11 +36,13 @@ export default function TextForm(props) {
         }
       );
         setText(newText);
+        props.showAlert("Converted text to tittle case","Success");
     }
 
     const clearText=()=>{
       let newText='';
       setText(newText);
+      props.showAlert("Text has been cleared","Success");
     }
 
     const copyText=()=>{
@@ -46,12 +50,13 @@ export default function TextForm(props) {
       text.select();
       navigator.clipboard.writeText(text.value)
 
+      props.showAlert("Text has been Copied","Success");
 
     }
     
 
     const handleOnChange=(event)=>{
-      console.log("change")
+      // console.log("change")
       setText(event.target.value);
       
       
