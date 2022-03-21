@@ -69,8 +69,9 @@ export default function TextForm(props) {
         <textarea className={`form-control bg-${props.mode} text-${props.mode==='light'? 'dark':'white'}`} value={text} placeholder='Enter text here...' onChange={handleOnChange} id="myBox" rows="10"></textarea>
       </div>
 
-      <div className="container2 border border-dark mb-3 pt-2  ps-2">
+      <div className="container2 border border-dark mb-3 pt-2  ps-2 ">
         <p className=''>{text.trim().split(/\s+/g).length} Words and {text.length} Charachter</p>
+        <p>{(text.length*0.0032).toFixed(2)}  Minutes read</p>
       </div>
 
         <button className='btn btn-primary mx-2' onClick={handleUpClick} >Convert to UpperCase</button>
@@ -84,7 +85,9 @@ export default function TextForm(props) {
 
     <div className={`container my-4 text-${props.mode==='light'? 'dark':'white'}`}>
     <h2>Preview</h2>
-    <p>{text.length>0? text:"No text in text Area."}</p>
+    <div >
+    <p className={`border border-${props.mode==='light'? 'dark':'secondary '} p-2`}>{text.length>0? text:"No text in text Area."}</p>
+    </div>
     </div>
     
     </>
