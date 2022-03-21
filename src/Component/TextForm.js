@@ -81,6 +81,11 @@ export default function TextForm(props) {
         <button className='btn btn-primary mx-2' onClick={copyText} >Copy Text</button>
 
     </div>
+
+    <div className={`container my-4 text-${props.mode==='light'? 'dark':'white'}`}>
+    <h2>Preview</h2>
+    <p>{text.length>0? text:"No text in text Area."}</p>
+    </div>
     
     </>
 
