@@ -1,10 +1,16 @@
 
 import './App.css';
-// import About from './Component/about'
+import About from './Component/about'
 import Navbar from './Component/Navbar';
 import TextForm from './Component/TextForm';
 import React, {useState} from 'react'
 import Alert from './Component/Alert';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 
 
@@ -37,20 +43,27 @@ function App() {
     }
 
   return (
-   <>
-    
    
-   <Navbar title="TextUtils" mode={mode} toogleMode={toogleMode}/>
+    <Router>
+    <Navbar title="TextUtils" mode={mode} toogleMode={toogleMode}/>
 
       <div className="container-fluid " >
       <Alert alert={alert}/>
-      <TextForm heading="Enter the text to analyze" mode={mode}  showAlert={showAlert}/>
-      {/* <About mode={mode} toogleMode={toogleMode}/> */}
+      <Switch>
+          <Route path="/about">
+            <About mode={mode} toogleMode={toogleMode}/>
+          </Route>
+
+          <Route path="/">
+          <TextForm heading="Enter the text to analyze" mode={mode}  showAlert={showAlert}/>
+          </Route>
+        </Switch>
+
+
       </div>
+    </Router>
+    
    
-   
-   
-   </>
   );
 }
 
