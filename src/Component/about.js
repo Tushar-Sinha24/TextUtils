@@ -1,4 +1,4 @@
-import { isLabelWithInternallyDisabledControl } from '@testing-library/user-event/dist/utils'
+// import { isLabelWithInternallyDisabledControl } from '@testing-library/user-event/dist/utils'
 
 
 export default function About(props) {
@@ -26,7 +26,7 @@ export default function About(props) {
                     </div>
                     <div className="accordion-item">
                         <h2 className="accordion-header" id="headingTwo">
-                        <button className={`accordion-button bg-${props.mode} text-${props.mode==='light'?'dark':'white'}`} type="button"  data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        <button className={`accordion-button bg-${props.mode}  text-${props.mode==='light'?'dark':'white'}`}type="button"  data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                             Accordion Item #2
                         </button>
                         </h2>

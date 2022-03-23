@@ -9,7 +9,6 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 
 
@@ -50,11 +49,11 @@ function App() {
       <div className="container-fluid " >
       <Alert alert={alert}/>
       <Switch>
-          <Route path="/about">
+          <Route exact path="/about">
             <About mode={mode} toogleMode={toogleMode}/>
           </Route>
 
-          <Route path="/">
+          <Route exact path="/">
           <TextForm heading="Enter the text to analyze" mode={mode}  showAlert={showAlert}/>
           </Route>
         </Switch>
